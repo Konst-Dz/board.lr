@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'BoardController@main')->name('main');
+Route::match(['get','post'],'{category}/all', 'BoardController@all');
+
